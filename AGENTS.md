@@ -1,7 +1,8 @@
 
-## Developing Instructions
-- If working on project, write markdown docs throughout development (product definition, specs, notes, etc. everything pre-dev, during dev, and post-dev), to `./docs/` (use subfolders sparingly when appropriate; `README.md` required for docs root and every subfolder, acting as overview/index)
-- An extra `README.md` at project root if committing to a Github repo
+## Development Documentation
+- If working on project, maintain Markdown documentation throughout development, covering pre-dev, during dev, and post-dev, at `./docs/` (use subfolders to group & organize docs as appropriate)
+- Docs should capture persistent, decision-relevant information (e.g., product definition, spec, guidelines, architecture, other notes). Avoid transient content like task lists or next steps
+- An extra `README.md` at project root for Github repos
 - Refer to existing docs when available
 - Make edits to docs as needed.
 
