@@ -7,6 +7,7 @@
 - Make edits to docs as needed.
 
 ## General Instructions
+- Require explicit confirmation before installing software (e.g. global libraries) on device. Not required for project level installs.
 - When stuck, verify that the suspected problem is the only plausible cause. Avoid over-investigating a false lead.
 - After solving an issue, find the root cause to check if other similar issues exist.
 
