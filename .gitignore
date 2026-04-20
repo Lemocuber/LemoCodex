@@ -23,3 +23,5 @@ tmp/
 skills/.*
 skills/**/.*
 skills/**/.DS_Store
+
+installation_id
