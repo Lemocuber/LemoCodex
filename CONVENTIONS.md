@@ -6,5 +6,6 @@
 ## For Git Repos
 - After implementing a feature, git commit (don't push unless required)
 - Before making changes, ensure a clean worktree, e.g. ask user if unstaged changes should be commited first.
-- When fixing bugs or patching minor behaviors off a recently commited feature, prioritize merging the fix to the former commit, instead creating a new follow-up commit.
+- Commit message formatted like `feat: new feature xxx`, `fix: bug xxx`, `deps(ci): update xxx`
+- When fixing bugs or patching minor behaviors off a recently commited feature, prioritize amending the former commit, instead creating a new follow-up commit.
 - A clean and readable commit history is expected.
