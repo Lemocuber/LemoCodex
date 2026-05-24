@@ -12,6 +12,7 @@ version.json
 *.sqlite-wal
 
 cache/
+app-server-control/
 log/
 memories/
 rules/
