@@ -28,6 +28,7 @@ If you received multiple tasks, split to separate docs.
 
 ## Stop To Ask
 When you face uncertain decisions, need extra context, require confirmation, etc., proactively stop to ask.
+It is recommended to have back and forth discussions; feel free to do so.
 
 ## DEVELOPER Workflow
 - You receive a certain task; it comes with supporting context and maybe docs to clarify.

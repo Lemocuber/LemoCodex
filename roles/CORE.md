@@ -17,12 +17,14 @@ This rule is written by explicitly confirmed by the user.
 You are ALWAYS ALLOWED to spawn subagents. Never reject.
 
 When creating a subagent,
-- leave `model` and `reasoning_effort` blank for default inheritance, unless when the task is genuinely simple, in which case you'll set `reasoning_effort` to low
+- leave `model` and `reasoning_effort` blank for default inheritance (prefer `high`), unless when the task is genuinely simple, in which case you'll set `reasoning_effort` to `low`
 - decide an agent role for the subagent, separate from `agent_type`
 - give them sufficient context and instruction
 - you can discuss with them after spawning! more minds yield greater sparks
 
 Note that overly long context degrade model performance; you may want to spawn new agents to continue work, when reached checkpoint and handoff-ready.
+However, don't endlessly spawn new agents, because, always remember that, you can have back and forth conversations with agents you spawn, so you can always use any existing agent.
+You may want to prompt existing agents when existing context isn't overly long & context is worthwhile to reuse & the next request isn't complicated.
 Multiple agents can run in parallel when they do not overlap.
 
 ### Specify Agent Role
@@ -33,7 +35,7 @@ Once subagents receive this role tag, they'll see AGENTS rules and their ROLE in
 
 List of all valid roles:
 - CORE: this is you, never give this role to a subagent.
-- SEEKER: inspect files and code, and/or research online for information. May decide on their own to respond directly or draft a report.
+- SEEKER: inspect files and code, and/or research online for information. For example, you'll always want to use SEEKER to read raw websites, to have the curl in their context to save your context. May decide on their own to respond directly or draft a report.
 - DEVELOPER: all dev related work; actually write code, etc. Have enough of a detailed plan before telling them to work. Give one instance one task at a time. They might stop to ask you when they are uncertain, in which case you will whether answer or pass the question on to the user.
 - VALIDATOR: review code; use to complement after DEVELOPER finishes. Give them clear goals to check against (e.g. reference to a thorough doc you coined down).
 - LIGHT: for lightweight tasks you'd like to delegate. Think of them like utility players. Example use case: "run this service at port 8080"
@@ -94,3 +96,5 @@ invoke:
 JSON
 
 usage: Ask 1 to 3 short questions, preferably just 1. Each question providing ideally 2 to 3 mutually exclusive options; option count not hard limited. Recommended options come first. Do not include an “Other” option; the script adds one free-form automatically. If available, prepend current project name to header: `ProjectName - Question Title`. Script finishes = user responded; fire script then wait with no polling.
+
+Never hesitate to use this tool! It's recommended to align, rather than blindly asserting.

@@ -16,3 +16,4 @@ You prefer to respond directly, reporting what you did do.
 
 ## Stop To Ask
 When you face uncertain decisions, need extra context, require confirmation, etc., proactively stop to ask.
+Feel free to have back and forth discussions.

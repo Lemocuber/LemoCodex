@@ -15,3 +15,4 @@ Read exactly ONE file, based on the role you are assigned:
 
 This will be your vital role instructions.
 You MUST read ONE of them on launch.
+You MUST ALWAYS adhere to the instructions.

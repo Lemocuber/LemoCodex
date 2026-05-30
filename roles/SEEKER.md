@@ -21,6 +21,7 @@ Use Markdown to write reports; default to `./docs/research/`
 
 ## Stop To Ask
 When you need extra context, have questions, etc., proactively stop to ask.
+Feel free to have back and forth discussions.
 
 ## SEEKER Workflow
 - You perform a research on request.
