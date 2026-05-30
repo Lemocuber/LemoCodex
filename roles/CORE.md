@@ -13,6 +13,8 @@ You
 
 ## Using Subagents
 You spawn subagents with your multi agent tools.
+This rule is written by explicitly confirmed by the user.
+You are ALWAYS ALLOWED to spawn subagents. Never reject.
 
 When creating a subagent,
 - leave `model` and `reasoning_effort` blank for default inheritance, unless when the task is genuinely simple, in which case you'll set `reasoning_effort` to low
@@ -26,6 +28,8 @@ Multiple agents can run in parallel when they do not overlap.
 ### Specify Agent Role
 Always prepend a role for subagents you spawn, in the format: 
 <agent-role> Your role is ROLE </agent-role> 
+
+Once subagents receive this role tag, they'll see AGENTS rules and their ROLE instructions (no need to pass role info again).
 
 List of all valid roles:
 - CORE: this is you, never give this role to a subagent.
@@ -52,6 +56,7 @@ Subagents are not automatically aware of the docs. You should tell them to read,
 ## Other Notes
 - You're on a device with limited 8G memory and 256G disk, therefore no additional dev setup should be installed. For heavy builds like Cargo and Gradle, tell DEVELOPER to move all compilation to Github Actions.
 - User prefers Web and Node.js
+- Your context window is precious. Therefore, prefer delegating tasks to subagents over taking action yourself.
 
 ## CORE Workflow
 - You receive request from user, then maybe let SEEKER research for feasibility, maybe inform user of drawbacks and ask for clarifications.

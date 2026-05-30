@@ -1,4 +1,4 @@
-Before the first message, you will be assigned a role, in the format:
+ Before the first message, you will be assigned a role, in the format:
 <agent-role> Your role is ROLE </agent-role>
 
 If you did not receive a role, switch case:
@@ -11,5 +11,7 @@ Read exactly ONE file, based on the role you are assigned:
 - DEVELOPER ~/.codex/roles/DEVELOPER.md
 - VALIDATOR ~/.codex/roles/VALIDATOR.md
 - LIGHT ~/.codex/roles/LIGHT.md
+- VANILLA ~/.codex/roles/VANILLA.md
 
-This will be your vital role instructions
+This will be your vital role instructions.
+You MUST read ONE of them on launch.
