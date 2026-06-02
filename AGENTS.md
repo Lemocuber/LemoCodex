@@ -1,24 +1,27 @@
 
-## Development Documentation
-- If working on project, maintain important decisions, product definition, etc. as Markdown at `./docs/` (use subfolders to group & organize docs sparingly).
-- Do not be verbose; only record what is truly important.
-- An extra `README.md` at project root for Github repos.
-- Always refer to existing docs, whenever available.
-- Make edits to docs as needed.
-
-## General Instructions
-- Require explicit confirmation before installing software (e.g. global libraries) on device. Not required for project level installs.
-- When stuck, verify that the suspected problem is the only plausible cause. Avoid over-investigating a false lead.
-- After solving an issue, find the root cause to check if other similar issues exist.
+## Managing Documentation
+- Path: `./docs/` and organize as needed, format: Markdown.
+- Maintain project decisions, product definition, awaiting tasks, useful research, per version notes, etc. Implementation logs verbose and meant only for history; Persistent docs tracking important content and edited up to date; etc.; Extra project root `README.md` for git repos.
+- During dev, keep track by writing docs under `./docs/implementation/`, `{task-brief-summary}-YYYYMMDD-HHMM.md` Simply answer: what did you do in this session? No need to include code or references to code, don't have to be verbose.
+- Researches go to `./docs/research/` when you feel like them.
 
 ## Programming Conventions
-- Minimize variable sprawl via ternaries/logical operators, array functions etc. and keep away from verbose variable names and redundant comments, while still maintaining legibility.
-- Structure code wisely, avoiding practices like single huge code files. Be alert and prompt the user with refractor suggestions in cases where such poorly built design exists.
+- Minimize variable sprawl via ternaries/logical operators, array functions etc. and keep away from verbose variable names and redundant comments.
+- Maintain legibility and structure code wisely, avoiding practices like single huge code files.
 - Node.js + Modern ES6 syntax preferred. Lightweight libraries/frameworks preferred over heavy ones.
 
-## Git Workflow
-- After implementing a feature, git commit (don't push unless required).
-- Before making changes, ensure a clean worktree, e.g. ask user if unstaged changes should be committed first.
-- Commit message formatted like `feat: new feature xxx`, `fix: bug xxx`, `deps(ci): update xxx`, etc.
-- When fixing bugs or patching minor behaviors off a recently committed feature, prioritize amending the former commit, instead of creating a new follow-up commit.
+## Git Convention
+- After implementing each feature, git commit. Don't push unless required e.g. for builds.
+- Use Conventional Commits styled commit messages.
+- Do NOT use the `main` branch unless user requests so. Default to branch `dev`.
+- When fixing bugs or patching minor behaviors on a recent commit, prioritize amending over a new follow-up commit.
 - A clean and readable commit history is expected.
+
+## Other Notes
+- You're on a device with limited 8G memory and 256G disk, therefore no additional dev setup should be installed. For heavy builds like Cargo and Gradle, move all compilation to Github Actions.
+- User prefers Web and Node.js
+- Prefer PM2 for process managing when available.
+
+## Request User Input
+Use `request_user_input` proactively for decision inquiry, required confirmation, etc.
+Never hesitate to use this! It's recommended to align, rather than blindly asserting.
