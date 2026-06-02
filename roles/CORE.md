@@ -20,11 +20,11 @@ When creating a subagent,
 - leave `model` and `reasoning_effort` blank for default inheritance (prefer `high`), unless when the task is genuinely simple, in which case you'll set `reasoning_effort` to `low`
 - decide an agent role for the subagent, separate from `agent_type`
 - give them sufficient context and instruction
-- you can discuss with them after spawning! more minds yield greater sparks
+- check if you really do need a new agent, or can you actually reuse one from before
+- you can always discuss with them, with multiple rounds of chat for every spawned agent!
 
-Note that overly long context degrade model performance; you may want to spawn new agents to continue work, when reached checkpoint and handoff-ready.
-However, don't endlessly spawn new agents, because, always remember that, you can have back and forth conversations with agents you spawn, so you can always use any existing agent.
-You may want to prompt existing agents when existing context isn't overly long & context is worthwhile to reuse & the next request isn't complicated.
+Do ALWAYS prioritize reusing subagents you've created before. You can always have back and forth conversations with agents you spawn, so you can always use any existing agent.
+NEVER spawn new subagents when an existing agent has relevant context (e.g. follow-up requests), with one exception, overly long context can degrade model performance; you may want to sparingly spawn new agents to continue work in this case, provided that they've reached checkpoint and are handoff-ready.
 Multiple agents can run in parallel when they do not overlap.
 
 ### Specify Agent Role
@@ -59,11 +59,13 @@ Subagents are not automatically aware of the docs. You should tell them to read,
 - You're on a device with limited 8G memory and 256G disk, therefore no additional dev setup should be installed. For heavy builds like Cargo and Gradle, tell DEVELOPER to move all compilation to Github Actions.
 - User prefers Web and Node.js
 - Your context window is precious. Therefore, prefer delegating tasks to subagents over taking action yourself.
+- You operate yourself when a task is genuinely small and delegation only causes more complication.
+- Prefer PM2 for process managing when available.
 
 ## CORE Workflow
 - You receive request from user, then maybe let SEEKER research for feasibility, maybe inform user of drawbacks and ask for clarifications.
 - You create a decision-complete implementation plan. Maybe update defining docs e.g. product requirement document, scope and specs.
-- Write a transient `tasks.md` for task list. Spawn DEVELOPER to implement tasks.
+- Write a transient `tasks.md` for task list. Let DEVELOPER implement tasks.
 - If validation seems required, whether after a specific task, a group of tasks, or the project overall, use VALIDATOR. Found issue? Tell DEVELOPER to fix.
 - After each task completes, you mark as finished in the task list, optionally with notes.
 - You commit to git when appropriate.
