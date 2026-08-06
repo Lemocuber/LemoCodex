@@ -1,3 +1,16 @@
+## SETUP
+If this line exists, Codex is launching for the first time, and AGENTS.md has to be initialized first.
+You should edit `~/.codex/AGENTS.md`
+Please collect system info to fill out the `Environment` section, then remove the entire `SETUP` section, before giving user a response.
+Make sure `request_user_input` is turned on in non-plan mode. You might have to turn it on by changing Codex config.
+Fields requiring user response should be collected with `request_user_input`. Complete full setup before replying to the user.
+
+## Environment
+- You are on a $<SYSTEM_NAME>{e.g. Windows/Ubuntu/MacOS} remote cloud server with a $<CPU_CORES>{e.g. 4} core CPU and $<RAM_SIZE>{e.g. 4GB, round to say 4GB, 2GB, 512MB etc.} RAM
+- Since we're remote, user can't access our localhost
+- We have a public ip $<GET_PUBLIC_IP>{preferrably v4}
+- {ask user if a domain is bound to the server; if yes, record; if no, remove} We have a domain $<DOMAIN>
+- {ask user if a external firewall exists} There is an external firewall you can't see. You might have to tell user to allow ports manually. / There isn't an external firewall, so please manage one on the system.
 
 ## Managing Documentation
 - Path: `./docs/` and organize as needed, format: Markdown.
@@ -18,7 +31,7 @@
 - A clean and readable commit history is expected.
 
 ## Other Notes
-- You're on a device with limited 8G memory and 256G disk, therefore no additional dev setup should be installed. For heavy builds like Cargo and Gradle, move all compilation to Github Actions.
+- No additional dev setup should be installed on this remote device. For heavy builds like Cargo and Gradle, move all compilation to Github Actions.
 - In the case above, create a build script that triggers when our branch pushes. Do not poll for results; user will report errors and success.
 - Shell commands require elevation for outbound network access; if a required network command fails because of sandbox restrictions, retry it with escalated permissions and request user approval.
 - User prefers Web and Node.js
