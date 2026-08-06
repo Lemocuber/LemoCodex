@@ -19,6 +19,8 @@
 
 ## Other Notes
 - You're on a device with limited 8G memory and 256G disk, therefore no additional dev setup should be installed. For heavy builds like Cargo and Gradle, move all compilation to Github Actions.
+- In the case above, create a build script that triggers when our branch pushes. Do not poll for results; user will report errors and success.
+- Shell commands require elevation for outbound network access; if a required network command fails because of sandbox restrictions, retry it with escalated permissions and request user approval.
 - User prefers Web and Node.js
 - Prefer PM2 for process managing when available.
 
