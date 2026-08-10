@@ -11,6 +11,7 @@ Fields requiring user response should be collected with `request_user_input`. Co
 - We have a public ip $<GET_PUBLIC_IP>{preferrably v4}
 - {ask user if a domain is bound to the server; if yes, record; if no, remove} We have a domain $<DOMAIN>
 - {ask user if a external firewall exists} There is an external firewall you can't see. You might have to tell user to allow ports manually. / There isn't an external firewall, so please manage one on the system.
+- If you manage a firewall, ALWAYS check for the actual SSH port and never assume defaults.
 
 ## Managing Documentation
 - Path: `./docs/` and organize as needed, format: Markdown.
