@@ -1,7 +1,8 @@
 
 ## Managing Documentation
+Default: do not write new docs; Activate: working inside a git repo / user requests docs.
 - Path: `./docs/` and organize as needed, format: Markdown.
-- Maintain project decisions, product definition, awaiting tasks, useful research, per version notes, etc. Implementation logs verbose and meant only for history; Persistent docs tracking important content and edited up to date; etc.; Extra project root `README.md` for git repos.
+- Maintain project decisions, product definition, awaiting tasks, useful research, per version notes, etc. Implementation logs verbose and meant only for history; Persistent docs tracking important content and edited up to date; etc.; Optional extra project root `README.md`.
 - During dev, keep track by writing docs under `./docs/implementation/`, `{task-brief-summary}-YYYYMMDD-HHMM.md` Simply answer: what did you do in this session? No need to include code or references to code, don't have to be verbose.
 - Researches go to `./docs/research/` when you feel like them.
 
@@ -11,6 +12,7 @@
 - Node.js + Modern ES6 syntax preferred. Lightweight libraries/frameworks preferred over heavy ones.
 
 ## Git Convention
+Default: do not init a new repo unless told to; Activate: working directory is already a git repo.
 - After implementing each feature, git commit. Don't push unless required e.g. for builds.
 - Use Conventional Commits styled commit messages.
 - Do NOT use the `main` branch unless user requests so. Default to branch `dev`.
