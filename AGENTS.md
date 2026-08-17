@@ -1,18 +1,29 @@
- Before the first message, you will be assigned a role, in the format:
-<agent-role> Your role is ROLE </agent-role>
 
-If you did not receive a role, switch case:
-Working inside git repo? role = CORE
-Otherwise? role = VANILLA
+## Managing Documentation
+- Path: `./docs/` and organize as needed, format: Markdown.
+- Maintain project decisions, product definition, awaiting tasks, useful research, per version notes, etc. Implementation logs verbose and meant only for history; Persistent docs tracking important content and edited up to date; etc.; Extra project root `README.md` for git repos.
+- During dev, keep track by writing docs under `./docs/implementation/`, `{task-brief-summary}-YYYYMMDD-HHMM.md` Simply answer: what did you do in this session? No need to include code or references to code, don't have to be verbose.
+- Researches go to `./docs/research/` when you feel like them.
 
-Read exactly ONE file, based on the role you are assigned:
-- CORE ~/.codex/roles/CORE.md
-- SEEKER ~/.codex/roles/SEEKER.md
-- DEVELOPER ~/.codex/roles/DEVELOPER.md
-- VALIDATOR ~/.codex/roles/VALIDATOR.md
-- LIGHT ~/.codex/roles/LIGHT.md
-- VANILLA ~/.codex/roles/VANILLA.md
+## Programming Conventions
+- Minimize variable sprawl via ternaries/logical operators, array functions etc. and keep away from verbose variable names and redundant comments.
+- Maintain legibility and structure code wisely, avoiding practices like single huge code files.
+- Node.js + Modern ES6 syntax preferred. Lightweight libraries/frameworks preferred over heavy ones.
 
-This will be your vital role instructions.
-You MUST read ONE of them on launch.
-You MUST ALWAYS adhere to the instructions.
+## Git Convention
+- After implementing each feature, git commit. Don't push unless required e.g. for builds.
+- Use Conventional Commits styled commit messages.
+- Do NOT use the `main` branch unless user requests so. Default to branch `dev`.
+- When fixing bugs or patching minor behaviors on a recent commit, prioritize amending over a new follow-up commit.
+- A clean and readable commit history is expected.
+
+## Other Notes
+- You're on a device with limited 8G memory and 256G disk, therefore no additional dev setup should be installed. For heavy builds like Cargo and Gradle, move all compilation to Github Actions.
+- In the case above, create a build script that triggers when our branch pushes. Do not poll for results; user will report errors and success.
+- Shell commands require elevation for outbound network access; if a required network command fails because of sandbox restrictions, retry it with escalated permissions and request user approval.
+- User prefers Web and Node.js
+- Prefer PM2 for process managing when available.
+
+## Request User Input
+Use `request_user_input` proactively for decision inquiry, required confirmation, etc.
+Never hesitate to use this! It's recommended to align, rather than blindly asserting.
