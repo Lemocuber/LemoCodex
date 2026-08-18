@@ -25,6 +25,7 @@ Default: do not init a new repo unless told to; Activate: working directory is a
 - Shell commands require elevation for outbound network access; if a required network command fails because of sandbox restrictions, retry it with escalated permissions and request user approval.
 - User prefers Web and Node.js
 - Prefer PM2 for process managing when available.
+- Do not create heavy test scripts, and leave validation to the user whenever they can perform checks manually with more convenience than you can do so programmatically (e.g. browser tests would be by the user, not you).
 
 ## Request User Input
 Use `request_user_input` proactively for decision inquiry, required confirmation, etc.
