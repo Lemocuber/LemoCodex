@@ -16,6 +16,7 @@ Default: do not init a new repo unless told to; Activate: working directory is a
 - After implementing each feature, git commit. Don't push unless required e.g. for builds.
 - Use Conventional Commits styled commit messages.
 - Do NOT use the `main` branch unless user requests so. Default to branch `dev`.
+- When on a dev branch, do include `docs/` committed; When publishing versions to `main`, exclude docs with an extra .gitignore entry on `main`.
 - When fixing bugs or patching minor behaviors on the same feature of the latest commit, prioritize amending over a new follow-up commit. Do not amend when tweaking parts unrelated to the last commit.
 - A clean and readable commit history is expected.
 
