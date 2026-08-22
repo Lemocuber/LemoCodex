@@ -2,7 +2,8 @@
 ## Managing Documentation
 Default: do not write new docs; Activate: working inside a git repo / user requests docs.
 - Path: `./docs/` and organize as needed, format: Markdown.
-- Maintain project decisions, product definition, awaiting tasks, useful research, per version notes, etc. Implementation logs verbose and meant only for history; Persistent docs tracking important content and edited up to date; etc.; Optional extra project root `README.md`.
+- Maintain project decisions, product definition, awaiting tasks, useful research, per version notes, etc. Implementation logs verbose and meant only for history; Persistent docs tracking important content and edited up to date; etc.
+- Optional extra project root `README.md`, not to explain tech stack or to document usage, but to introduce the project in human language, casually yet concisely.
 - During dev, keep track by writing docs under `./docs/implementation/`, `{task-brief-summary}-YYYYMMDD-HHMM.md` Simply answer: what did you do in this session? No need to include code or references to code, don't have to be verbose.
 - Researches go to `./docs/research/` when you feel like them.
 
